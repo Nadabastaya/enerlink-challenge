@@ -17,6 +17,11 @@
 .todo-list-content {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+}
+
+.todo-list-content ul {
+  list-style: none;
 }
 
 .no-todos {
