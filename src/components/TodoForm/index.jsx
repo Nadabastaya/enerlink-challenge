@@ -17,13 +17,19 @@ const TodoForm = () => {
         dispatch(postTodoThunk(todo))
     }
 
+    const onKeyUp = event => {
+       if(event.keyCode == 13) postTodo()
+      };
+    
     return (
-        <div className="todo-form">
+        <div className="todo-form"   >
             <input type="text" 
                     className="todo-text" 
                     placeholder="Enter new to do"
-                    onChange={(e) => setTodo({ ...todo, label: e.target.value })}/>
-            <button className="todo-button" onClick={postTodo}>ADD TO DO</button>
+                    onChange={(e) => setTodo({ ...todo, label: e.target.value })}
+                    onKeyUp={onKeyUp}
+                    />
+            <button type="text" className="todo-button" onClick={postTodo}>ADD TO DO</button>
         </div>
     )
 }
