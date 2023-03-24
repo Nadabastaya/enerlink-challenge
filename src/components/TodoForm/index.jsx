@@ -17,7 +17,6 @@ const TodoForm = () => {
         dispatch(postTodoThunk(todo))
     }
 
-
     return (
         <div className="todo-form">
             <input type="text" 

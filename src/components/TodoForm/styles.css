@@ -7,13 +7,22 @@
 .todo-text  {
     width: 300px;
     height: 30px;
-    border:  solid 1px;
+    border: #d8d8d8 solid 1px;
     border-radius: 5px;
 }
 
+.todo-text::placeholder {
+    padding: 10px;
+}
+
 .todo-button    {
-    background: rgb(53, 109, 173);
+    background: #458ef7;
     border-radius: 5px;
     border: none;
     color: #FFF;
+    font-weight: bold;
+}
+
+.todo-button:hover  {
+    background: #3672cb;
 }

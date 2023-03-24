@@ -4,6 +4,7 @@ export const todosSlice = createSlice({
     name: 'todos', 
     initialState: {
         data: [],
+        counter: 0,
     },
     reducers: {
         getTodos: (state, action) => {
@@ -13,11 +14,16 @@ export const todosSlice = createSlice({
             state.data[0].push(action.payload.data)
         },
         patchTodo: (state, action) =>   {
-            state.data.checked = [action.payload.checked]
+            const todo = state.data[0].find((todo) => todo.id === action.payload.data.id)
+            todo.checked = action.payload.data.checked
+            todo.checked ? state.counter += 1 : state.counter -= 1
         },
         deleteTodo: (state, action) =>  {
-            state.data.filter(todo => todo !== action.payload)
+            const index = state.data[0].filter(todo => todo.id !== action.payload.id) 
             
+            const todo = state.data[0].find((todo) => todo.id === action.payload.id)
+            if (todo.checked) state.counter -= 1
+            state.data[0].splice(index, 1)
         }
     }
 })
