@@ -15,7 +15,7 @@ const TodoList = () => {
   useEffect(() => {
     dispatch(getTodosThunk())
 
-  })
+  }, [])
 
   const handleDelete = (todoId) => {
     dispatch(deleteTodoThunk(todoId))
