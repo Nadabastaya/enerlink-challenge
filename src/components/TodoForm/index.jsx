@@ -4,10 +4,11 @@ import { useDispatch } from 'react-redux'
 import { postTodoThunk } from "../../redux/slices/todos/thunks";
 
 
+
 const TodoForm = () => {
 
     const [todo, setTodo] = useState({
-        id: 111,
+        id: 0,
         label: '',
         checked: false
     })
@@ -18,7 +19,7 @@ const TodoForm = () => {
     }
 
     const onKeyUp = event => {
-       if(event.keyCode == 13) postTodo()
+       if(event.keyCode === 13) postTodo()
       };
     
     return (

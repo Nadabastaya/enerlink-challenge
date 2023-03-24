@@ -19,7 +19,6 @@ export const getTodosThunk = () =>   {
                 theme: "dark",
                 });
         }
-        
     }
 }
 
@@ -42,7 +41,6 @@ export const postTodoThunk = (todo) =>   {
                 theme: "dark",
                 });
         }
-      
     }
 }
 
